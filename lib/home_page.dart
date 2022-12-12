@@ -9,24 +9,32 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  //overall habit summary
+  List habitList = [
+    // [habitName, habitStarted, timeSpent(sec), timeGoal(min)]
+    ['Ćwiczenia', false, 0, 30],
+    ['Medytacja', false, 0, 10],
+    ['Kodowanie', false, 0, 120],
+    ['Książka', false, 0, 60],
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
         backgroundColor: Colors.grey[900],
-        title: Text('Consistency is key.'),
+        title: const Text('Konsekwencja to klucz.'),
         centerTitle: false,
       ),
       body: Column(
         children: [
           HabitTile(
-            habitName: 'Kodowanie',
+            habitName: habitList[0][0],
             onTap: () {},
             settingsTapped: () {},
             timeSpent: 4,
             timeGoal: 12,
-            habitStarted: true,
+            habitStarted: habitList[0][1],
           ),
         ],
       ),

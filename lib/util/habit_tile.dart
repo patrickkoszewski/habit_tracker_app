@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
-
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class HabitTile extends StatelessWidget {
@@ -30,7 +28,7 @@ class HabitTile extends StatelessWidget {
         top: 20.0,
       ),
       child: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: Colors.grey[100],
           borderRadius: BorderRadius.circular(12),
@@ -67,7 +65,7 @@ class HabitTile extends StatelessWidget {
                     //habit name
                     Text(
                       habitName,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
@@ -79,7 +77,7 @@ class HabitTile extends StatelessWidget {
                     //progres
                     Text(
                       timeSpent.toString() + '/' + timeGoal.toString(),
-                      style: TextStyle(color: Colors.grey),
+                      style: const TextStyle(color: Colors.grey),
                     ),
                   ],
                 ),
@@ -87,7 +85,7 @@ class HabitTile extends StatelessWidget {
             ),
             GestureDetector(
               onTap: settingsTapped,
-              child: Icon(Icons.settings),
+              child: const Icon(Icons.settings),
             ),
           ],
         ),
