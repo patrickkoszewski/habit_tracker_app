@@ -30,11 +30,17 @@ class HabitTile extends StatelessWidget {
                 Container(
                   height: 60,
                   width: 60,
-                  color: Colors.red,
                   child: Stack(children: [
                     //progress circle
                     CircularPercentIndicator(
-                      radius: 40,
+                      radius: 60,
+                    ),
+                    //play pause button
+                    Center(
+                      child: Icon(
+                        Icons.play_arrow,
+                        size: 40,
+                      ),
                     ),
                   ]),
                 ),
