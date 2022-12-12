@@ -24,22 +24,34 @@ class _HomePageState extends State<HomePage> {
     //note what the start time is
     var startTime = DateTime.now();
 
+    //include the time already elapsed
+    int elapsedTime = habitList[index][2];
+
     //habit started or stoped
     setState(() {
       habitList[index][1] =
           !habitList[index][1]; //habitList = opposite of habitList
     });
 
-    //keep the time going
-    Timer.periodic(Duration(seconds: 1), (timer) {
-      //check when the user has stopped the timer
-      if (!habitList[index][1]) {
-        timer.cancel();
-      }
-      //calculate the time elapsed by comparing current time and start time
-      var currentTime = DateTime.now();
-      habitList[index][2] = currentTime.second - startTime.second;
-    });
+    if (habitList[index][1]) {
+      //check if habitList[index][1] == true
+      //keep the time going
+      Timer.periodic(Duration(seconds: 1), (timer) {
+        setState(() {
+          //check when the user has stopped the timer
+          if (!habitList[index][1]) {
+            timer.cancel();
+          }
+          //calculate the time elapsed by comparing current time and start time
+          var currentTime = DateTime.now();
+          habitList[index][2] = elapsedTime +
+              currentTime.second -
+              startTime.second +
+              60 * (currentTime.minute - startTime.minute) +
+              60 * 60 * (currentTime.hour - startTime.hour);
+        });
+      });
+    }
   }
 
   void settingsOpened(int index) {
