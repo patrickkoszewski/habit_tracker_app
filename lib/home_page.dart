@@ -25,7 +25,16 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  void settingsOpened(int index) {}
+  void settingsOpened(int index) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Settings for ' + habitList[index][0]),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
