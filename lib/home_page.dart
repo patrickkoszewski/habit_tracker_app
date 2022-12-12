@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   //overall habit summary
   List habitList = [
     // [habitName, habitStarted, timeSpent(sec), timeGoal(min)]
-    ['Ćwiczenia', false, 0, 30],
+    ['Ćwiczenia', false, 0, 1],
     ['Medytacja', false, 0, 10],
     ['Kodowanie', false, 0, 120],
     ['Czytanie', false, 0, 60],

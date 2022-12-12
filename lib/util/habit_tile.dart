@@ -70,6 +70,12 @@ class HabitTile extends StatelessWidget {
                       //progress circle
                       CircularPercentIndicator(
                         radius: 60,
+                        percent: percentCompleted(),
+                        progressColor: percentCompleted() > 0.5
+                            ? (percentCompleted() > 0.75
+                                ? Colors.green
+                                : Colors.orange)
+                            : Colors.red,
                       ),
                       //play pause button
                       Center(
