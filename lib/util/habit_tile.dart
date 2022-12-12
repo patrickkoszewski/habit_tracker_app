@@ -21,12 +21,25 @@ class HabitTile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //habit name
-                Text('Code'),
+                Text(
+                  'Code',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                const SizedBox(
+                  height: 4,
+                ),
 
                 //progres
-                Text('2:00 / 10 = 20%'),
+                Text(
+                  '2:00 / 10 = 20%',
+                  style: TextStyle(color: Colors.grey),
+                ),
               ],
             ),
             Icon(Icons.settings),
