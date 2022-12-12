@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Settings for ' + habitList[index][0]),
+          title: Text('Ustawienia dla ' + habitList[index][0]),
         );
       },
     );
