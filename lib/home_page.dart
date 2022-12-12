@@ -15,10 +15,15 @@ class _HomePageState extends State<HomePage> {
     ['Ćwiczenia', false, 0, 30],
     ['Medytacja', false, 0, 10],
     ['Kodowanie', false, 0, 120],
-    ['Książka', false, 0, 60],
+    ['Czytanie', false, 0, 60],
   ];
 
-  void habitStarted(int index) {}
+  void habitStarted(int index) {
+    setState(() {
+      habitList[index][1] =
+          !habitList[index][1]; //habitList = opposite of habitList
+    });
+  }
 
   void settingsOpened(int index) {}
 
