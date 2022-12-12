@@ -15,8 +15,8 @@ class _HomePageState extends State<HomePage> {
   List habitList = [
     // [habitName, habitStarted, timeSpent(sec), timeGoal(min)]
     ['Ćwiczenia', false, 0, 1],
-    ['Medytacja', false, 0, 10],
-    ['Kodowanie', false, 0, 120],
+    ['Medytacja', false, 0, 2],
+    ['Kodowanie', false, 0, 3],
     ['Czytanie', false, 0, 60],
   ];
 
