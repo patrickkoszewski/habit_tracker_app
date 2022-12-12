@@ -4,7 +4,9 @@ import 'dart:math';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class HabitTile extends StatelessWidget {
-  const HabitTile({super.key});
+  final String habitName;
+
+  const HabitTile({super.key, required this.habitName});
 
   @override
   Widget build(BuildContext context) {
@@ -23,30 +25,36 @@ class HabitTile extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            //progress circle
-            CircularPercentIndicator(
-              radius: 40,
-            ),
-
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Row(
               children: [
-                //habit name
-                Text(
-                  'Code',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
+                //progress circle
+                CircularPercentIndicator(
+                  radius: 40,
                 ),
                 const SizedBox(
-                  height: 4,
+                  width: 20,
                 ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    //habit name
+                    Text(
+                      habitName,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 4,
+                    ),
 
-                //progres
-                Text(
-                  '2:00 / 10 = 20%',
-                  style: TextStyle(color: Colors.grey),
+                    //progres
+                    Text(
+                      '2:00 / 10 = 20%',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                  ],
                 ),
               ],
             ),
