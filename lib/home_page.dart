@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:habit_tracker_app/util/habit_tile.dart';
 
@@ -19,9 +21,24 @@ class _HomePageState extends State<HomePage> {
   ];
 
   void habitStarted(int index) {
+    //note what the start time is
+    var startTime = DateTime.now();
+
+    //habit started or stoped
     setState(() {
       habitList[index][1] =
           !habitList[index][1]; //habitList = opposite of habitList
+    });
+
+    //keep the time going
+    Timer.periodic(Duration(seconds: 1), (timer) {
+      //check when the user has stopped the timer
+      if (!habitList[index][1]) {
+        timer.cancel();
+      }
+      //calculate the time elapsed by comparing current time and start time
+      var currentTime = DateTime.now();
+      habitList[index][2] = currentTime.second - startTime.second;
     });
   }
 
