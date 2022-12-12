@@ -22,18 +22,11 @@ class _HomePageState extends State<HomePage> {
         children: [
           HabitTile(
             habitName: 'Kodowanie',
-          ),
-          HabitTile(
-            habitName: 'Design',
-          ),
-          HabitTile(
-            habitName: 'Ćwiczenia',
-          ),
-          HabitTile(
-            habitName: 'Medytacja',
-          ),
-          HabitTile(
-            habitName: 'Produkcja',
+            onTap: () {},
+            settingsTapped: () {},
+            timeSpent: 4,
+            timeGoal: 12,
+            habitStarted: true,
           ),
         ],
       ),
