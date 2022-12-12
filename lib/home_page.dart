@@ -29,6 +29,12 @@ class _HomePageState extends State<HomePage> {
           HabitTile(
             habitName: 'Ćwiczenia',
           ),
+          HabitTile(
+            habitName: 'Medytacja',
+          ),
+          HabitTile(
+            habitName: 'Produkcja',
+          ),
         ],
       ),
     );

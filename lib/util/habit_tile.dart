@@ -27,9 +27,16 @@ class HabitTile extends StatelessWidget {
           children: [
             Row(
               children: [
-                //progress circle
-                CircularPercentIndicator(
-                  radius: 40,
+                Container(
+                  height: 60,
+                  width: 60,
+                  color: Colors.red,
+                  child: Stack(children: [
+                    //progress circle
+                    CircularPercentIndicator(
+                      radius: 40,
+                    ),
+                  ]),
                 ),
                 const SizedBox(
                   width: 20,
