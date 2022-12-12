@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
+
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class HabitTile extends StatelessWidget {
   const HabitTile({super.key});
@@ -20,6 +23,11 @@ class HabitTile extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            //progress circle
+            CircularPercentIndicator(
+              radius: 40,
+            ),
+
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
