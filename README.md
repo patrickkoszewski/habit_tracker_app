@@ -1,6 +1,8 @@
 # habit_tracker_app
 
-A new Flutter project.
+A Habit tracker Flutter Demo project.
+
+![habitTracker](https://user-images.githubusercontent.com/116440070/207134427-138c2e4f-9828-40b3-afba-77531bf5d961.png)
 
 ## Getting Started
 
