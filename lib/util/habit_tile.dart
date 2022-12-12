@@ -5,8 +5,21 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class HabitTile extends StatelessWidget {
   final String habitName;
+  final VoidCallback onTap;
+  final VoidCallback settingsTapped;
+  final int timeSpent;
+  final int timeGoal;
+  final bool habitStarted;
 
-  const HabitTile({super.key, required this.habitName});
+  const HabitTile({
+    super.key,
+    required this.habitName,
+    required this.onTap,
+    required this.settingsTapped,
+    required this.timeSpent,
+    required this.timeGoal,
+    required this.habitStarted,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,22 +40,23 @@ class HabitTile extends StatelessWidget {
           children: [
             Row(
               children: [
-                Container(
-                  height: 60,
-                  width: 60,
-                  child: Stack(children: [
-                    //progress circle
-                    CircularPercentIndicator(
-                      radius: 60,
-                    ),
-                    //play pause button
-                    Center(
-                      child: Icon(
-                        Icons.play_arrow,
-                        size: 40,
+                GestureDetector(
+                  onTap: onTap,
+                  child: SizedBox(
+                    height: 60,
+                    width: 60,
+                    child: Stack(children: [
+                      //progress circle
+                      CircularPercentIndicator(
+                        radius: 60,
                       ),
-                    ),
-                  ]),
+                      //play pause button
+                      Center(
+                        child:
+                            Icon(habitStarted ? Icons.pause : Icons.play_arrow),
+                      ),
+                    ]),
+                  ),
                 ),
                 const SizedBox(
                   width: 20,
@@ -64,14 +78,17 @@ class HabitTile extends StatelessWidget {
 
                     //progres
                     Text(
-                      '2:00 / 10 = 20%',
+                      timeSpent.toString() + '/' + timeGoal.toString(),
                       style: TextStyle(color: Colors.grey),
                     ),
                   ],
                 ),
               ],
             ),
-            Icon(Icons.settings),
+            GestureDetector(
+              onTap: settingsTapped,
+              child: Icon(Icons.settings),
+            ),
           ],
         ),
       ),
